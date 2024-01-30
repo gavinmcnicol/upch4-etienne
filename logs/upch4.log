@@ -1,0 +1,12 @@
+/home/users/efluet/.Renviron
+R_LIBS=/home/groups/robertj2/R_libs
+ - Running Rscript
+Loading required package: iterators
+Loading required package: parallel
+Error in .local(x, ...) : invalid layer names
+Calls: source ... $ -> [[ -> [[ -> .local -> subset -> subset -> .local
+In addition: Warning message:
+In .newCRS(value) :
+  +init=EPSG:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 is not a valid PROJ.4 CRS string
+Execution halted
+run time is 20601 s

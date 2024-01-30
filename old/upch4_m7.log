@@ -1,0 +1,26 @@
+/home/users/efluet/.Renviron
+R_LIBS=/home/groups/robertj2/R_libs
+ - Running Rscript
+Loading required package: iterators
+Loading required package: parallel
+
+Attaching package: ‘colorspace’
+
+The following object is masked from ‘package:raster’:
+
+    RGB
+
+rgeos version: 0.4-3, (SVN revision 595)
+ GEOS runtime version: 3.6.2-CAPI-1.10.2 
+ Linking to sp version: 1.3-1 
+ Polygon checking: TRUE 
+
+here() starts at /home/groups/robertj2/upch4/scripts
+
+Attaching package: ‘here’
+
+The following object is masked from ‘package:lubridate’:
+
+    here
+
+slurmstepd: error: *** JOB 13684702 ON sh03-01n19 CANCELLED AT 2020-12-15T20:57:48 ***

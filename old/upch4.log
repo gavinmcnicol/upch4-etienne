@@ -1,0 +1,39 @@
+/home/users/efluet/.Renviron
+R_LIBS=/home/groups/robertj2/R_libs
+ - Running Rscript
+Loading required package: iterators
+Loading required package: parallel
+
+Attaching package: ‘colorspace’
+
+The following object is masked from ‘package:raster’:
+
+    RGB
+
+rgeos version: 0.4-3, (SVN revision 595)
+ GEOS runtime version: 3.6.2-CAPI-1.10.2 
+ Linking to sp version: 1.3-1 
+ Polygon checking: TRUE 
+
+here() starts at /home/groups/robertj2/upch4/scripts
+
+Attaching package: ‘here’
+
+The following object is masked from ‘package:lubridate’:
+
+    here
+
+Warning message:
+In .couldBeLonLat(x, warnings = warnings) :
+  CRS is NA. Assuming it is longitude/latitude
+Regions defined for each Polygons
+### Welcome to rworldmap ###
+For a short introduction type : 	 vignette('rworldmap')
+Regions defined for each Polygons
+Regions defined for each Polygons
+Warning message:
+In pmax(key_height, apply(key_sizes, 1, max)) :
+  an argument will be fractionally recycled
+Error in print(proc.time() - ptm) : object 'ptm' not found
+Execution halted
+run time is 11018 s

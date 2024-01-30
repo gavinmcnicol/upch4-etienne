@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(dplyr)\nlibrary(tidyr)\n\n\nr2 <- read.csv(\"../../data/r2/site_r2_all.csv\", stringsAsFactors = F) %>%\n      select(-SiteID2, -SiteID3, -SiteID4) %>%\n      filter(SiteID != \"\") %>%\n      arrange(SK_gapfillingR2)\n\norder_siteid <- as.factor(unique(r2$SiteID)) \n\nr2l <-r2 %>%\n      gather(key=\"type\", value=\"value\", SK_gapfillingR2:MG_wtd.variability.score) %>%\n      filter(SiteID != \"\") %>%\n      filter(! type %in% c(\"MG_variability.score\", \"MG_wtd.variability.score\"))\n      \n\nr2l$SiteID <- factor(r2l$SiteID, levels = factor(order_siteid))\n\n\n\nsource(\"../plots/theme/line_plot_theme.r\")\n\nggplot(r2l) + \n  geom_bar(aes(x=SiteID, y=value, fill=type), stat=\"identity\", position=\"dodge\") +\n  scale_y_continuous(limits= c(-0.1, 1.5)) +\n  coord_flip() +\n  xlab(\"\") + ylab(\"R^2\") +\n  line_plot_theme +\n  theme(legend)\n  \n  \n  \n# save under filename\nggsave(\"../../output/figures/barplot_all_r2_persite.png\", \n       width=90, height=160, dpi=500, units=\"mm\", type = \"cairo-png\")\ndev.off()\n\n",
+    "created" : 1561156179523.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "581424687",
+    "id" : "A0F084E7",
+    "lastKnownWriteTime" : 1561162559,
+    "last_content_update" : 1561162559399,
+    "path" : "C:/Users/efluet/Dropbox/upch4/scripts/ch4_upscaling/plots/barplot_all_r2_persite.r",
+    "project_path" : "plots/barplot_all_r2_persite.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

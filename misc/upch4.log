@@ -1,0 +1,17 @@
+/home/users/efluet/.Renviron
+R_LIBS=/home/groups/robertj2/R_libs
+ - Running Rscript
+here() starts at /home/groups/robertj2/upch4/scripts
+Loading required package: iterators
+Loading required package: parallel
+Warning messages:
+1: In nc_open(paste0(dir, "merra2.0.5d.pre.monthly.nc"), readunlim = FALSE) :
+  NAs introduced by coercion
+2: In nc_open(paste0(dir, "merra2.0.5d.pres.monthly.nc"), readunlim = FALSE) :
+  NAs introduced by coercion
+3: In nc_open(paste0(dir, "merra2.0.5d.spfh.monthly.nc"), readunlim = FALSE) :
+  NAs introduced by coercion
+4: In nc_open(paste0(dir, "merra2.0.5d.tmp.monthly.nc"), readunlim = FALSE) :
+  NAs introduced by coercion
+There were 50 or more warnings (use warnings() to see the first 50)
+run time is 2957 s

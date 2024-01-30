@@ -1,0 +1,11 @@
+[1] " - Loaded packages"
++ : mtry=8, splitrule=variance, min.node.size=24.066 
+- : mtry=8, splitrule=variance, min.node.size=24.066 
+Aggregating results
+Fitting final model on full training set
+[1] 1
++ : mtry=8, splitrule=variance, min.node.size=24.066 
+- : mtry=8, splitrule=variance, min.node.size=24.066 
+Aggregating results
+Fitting final model on full training set
+[1] 2

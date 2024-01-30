@@ -1,0 +1,7 @@
+ - Setting R_libs path
+/home/users/efluet/.Renviron
+R_LIBS=/home/groups/robertj2/R_libs
+chmod: cannot access ‘cluster_runall.r’: No such file or directory
+ - Running Rscript
+Fatal error: cannot open file 'cluster_runall.r': No such file or directory
+run time is 3 s

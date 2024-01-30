@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(here)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)\nlibrary(ggExtra)\nhere()\n\nsource(\"./plots/theme/line_plot_theme.r\")\n\n\n# Read r squares\nr2 <- read.csv(\"./../data/r2/site_r2_all_v2.csv\", stringsAsFactors = F) %>%\n  # remove columns\n  select(-SiteID2, -SiteID3, -SiteID4) %>%\n  filter(SiteID != \"\",\n         wtd.variability..sq < 10,\n         variability.score < 4) %>%\n  select(SK_gapfillingR2, GM190430_bysite_R2, GM190530_MET_bysite_R2,\n         variability.score, variability.squared, wtd.variability.score, wtd.variability..sq)\n  #filter(!is.na(GM190430_bysite_R2) | !is.na(GM190430_bysite_R2)) %>%\n  arrange(SK_gapfillingR2) %>% \n  filter(MG_wtd.variability.score < 4) %>%\n  # Convert to long format\n  gather(key=\"type\", value=\"value\", SK_gapfillingR2:MG_wtd.variability.score)\n  \n\n# /-----------------------------------------------------------------------------\n#/   Make scatterplot\np1 <- ggplot(r2)+\n  geom_point(aes(x=MG_variability.score, y=SK_gapfillingR2))\n\n\np2 <- ggplot(r2)+\n  geom_point(aes(x=variability.score, y=SK_gapfillingR2), fill=\"blue\", alpha=0.5) + \n  scale_x_continuous(limits = c(0, 1.5)) +\n  xlab(\"Variability Score\\n (by Mathia Goeckede)\") +\n  ylab(\"Gapfilling R^2\\n(by Sara Knox)\") + \n  line_plot_theme\n\np2 <- ggExtra::ggMarginal(p2, type = \"histogram\")\np2\n\n\n\n\n\n\n\nggplot(r2, aes(x=value, y=wtd.variability.score)) +\n  geom_point(aes(color=type)) + \n  facet_grid(~type, labeller = label_both, scale = \"free\") +\n  line_plot_theme\n\n# save under filename\nggsave(\"../output/figures/scatter_variab_r2_persite.png\", p2,\n       width=90, height=80, dpi=800, units=\"mm\", type = \"cairo-png\")\ndev.off()\n\n\n#order_siteid <- as.factor(unique(r2$SiteID)) \n\n\n# r2l$SiteID <- factor(r2l$SiteID, levels = factor(order_siteid))\n# r2l <- r2l %>%\n#   mutate(type=ifelse(type==\"SK_gapfillingR2\",        \"Gapfilling R^2\", type),\n#          type=ifelse(type==\"GM190430_bysite_R2\",     \"Pred. R^2 w/ tower met\", type),\n#          type=ifelse(type==\"GM190530_MET_bysite_R2\", \"Pred. R^2 w/ gridded met\", type))\n\n",
+    "created" : 1563899286992.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2509933683",
+    "id" : "A8518352",
+    "lastKnownWriteTime" : 1563909173,
+    "last_content_update" : 1563909173,
+    "path" : "C:/Users/efluet/Dropbox/upch4/scripts/plots/wg3_scatter_all_r2_vs_directionalityscore.r",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
