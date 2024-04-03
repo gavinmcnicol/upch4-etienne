@@ -1,0 +1,35 @@
+---
+title: "upch4 global seasonality"
+author: "Gavin McNicol, Tanmay Rewari"
+date: "2024-04-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Purpose
+To explore the seasonality of the UpCH4 v1.0 global data product of wetland methane emissions.
+
+```{r load-libraries}
+library(raster)
+library(terra)
+library(tidyverse)
+```
+
+Load source scripts for functions
+
+```{r load-functions}
+
+```
+
+Get datasets (gridded UpCh4, Temperature, Wetland hydrology)
+
+```{r}
+
+```
+
+
+
+
